@@ -63,7 +63,7 @@ def emoweb_source(emoweb_username: Optional[str] = dlt.secrets.value, emoweb_pas
                     "path": "GetEnergyLabelChangeLog",
                     # Query parameters for the endpoint
                     "params": {
-                        "fromDate": "2024-09-15",
+                        "fromDate": "2016-07-01",
                         "toDate": "2024-10-15",
                     },
                     "data_selector": "SearchResults"
@@ -78,7 +78,7 @@ def emoweb_source(emoweb_username: Optional[str] = dlt.secrets.value, emoweb_pas
 def load_emoweb() -> None:
     pipeline = dlt.pipeline(
         pipeline_name="rest_api_emoweb",
-        destination=dlt.destinations.duckdb("data.db"),
+        destination="duckdb",
         dataset_name="emoweb",
         dev_mode=True,
     )
