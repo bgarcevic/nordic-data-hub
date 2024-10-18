@@ -68,7 +68,7 @@ def emoweb_source(emoweb_username: Optional[str] = dlt.secrets.value, emoweb_pas
                     },
                     "data_selector": "SearchResults"
                 },
-            }
+            },
         ],
     }
 
@@ -78,7 +78,7 @@ def emoweb_source(emoweb_username: Optional[str] = dlt.secrets.value, emoweb_pas
 def load_emoweb() -> None:
     pipeline = dlt.pipeline(
         pipeline_name="rest_api_emoweb",
-        destination="duckdb",
+        destination=dlt.destinations.duckdb("data.duckdb"),
         dataset_name="emoweb",
         dev_mode=True,
     )
