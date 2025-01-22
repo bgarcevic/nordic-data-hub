@@ -1,3 +1,10 @@
 [runtime]
 dlthub_telemetry = true
-log_level="INFO"
+log_level="INFO" 
+
+[data_writer]
+file_max_bytes=200000000
+buffer_max_items=100000
+
+[load]
+delete_completed_jobs=true
